@@ -1,14 +1,23 @@
+
+
 function FoodCard(props){
+    function OrderNow(){
+        console.log("Ordered: " + props.name);
+    }
     return (
         <div className="food-card">
-            <img className="food-img" src= {props.img} alt="burgerImg"/>
+            <div className="food-header">
+                <img className="food-img" src= {props.img} alt="burgerImg"/>
+                <p className="food-ratings"> {props.ratings} ({props.votes})</p>
+            </div>
             <h2 className="food-card-title">
             {props.name}
             </h2>
+            <h3 className="food-price">Rs. {props.price}</h3>
             <p className="food-desc"> {props.desc}  </p>
-            <p className="food-price">Rs. {props.price}</p>
-            <p className="food-ratings"> {props.ratings}</p>
-            <p className="food-votes"> {props.votes}</p>
+            
+            
+            <button className="order-button" onClick= {OrderNow}> Order Now</button>
         </div>
     );
 }
